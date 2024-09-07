@@ -1,0 +1,97 @@
+<!-- templates/display_data.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>admin</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style-admin.css') }}">
+</head>
+<body>
+    <!-- <div class="title"><h1>Data from MongoDB</h1></div> -->
+    <div class="title">
+        <h1>Admin Panel</h1>
+    </div>
+    <div class="table"><table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Register NO</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+                
+                <tr>
+                    <td>{{ data.Name }}</td>
+                    <td>{{ data['Register Number'] }}</td>
+                    <td>{{ data.From }}</td>
+                    <td>{{ data.To }}</td>
+                    <td>{{ data.Reason }}</td>
+                        <td>
+                            <span><button class="b1" id="approval{{ data['Register Number'] }}" onclick="approve('{{ data['Register Number'] }}')">Approve</button></span><br>
+                            <span><button class="b2" id="reject" onclick="reject('{{ data['Register Number'] }}')">Reject</button></span>
+                        </td>
+                        
+                    
+                </tr>
+        </tbody>
+    </table></div>
+</body>
+<script>
+    function approve(registerNumber){
+        const approveUrl = `http://127.0.0.1:5000/approve?register_number=${registerNumber}`;
+        fetch(approveUrl, {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json' 
+            }
+        })
+        .then(response => {
+            if (response.status === 200) {
+               
+                alert(`leave Approved for : ${registerNumber}`);
+                const bt=document.getElementById("approval{{ data['Register Number']}}");
+                const rbt=document.getElementById("reject");
+                bt.style.display='none';
+                rbt.style.display='none';
+            } else {
+                
+                alert('Failed to approve.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function reject(registerNumber) {
+        
+        const rejectUrl = `http://127.0.0.1:5000/reject?register_number=${registerNumber}`;
+        fetch(rejectUrl, {
+            method: 'GET', 
+            headers: {
+                'Content-Type': 'application/json' 
+            }
+        })
+        .then(response => {
+            if (response.status === 200) {
+               
+                alert(`Rejected Register Number: ${registerNumber}`);
+                const bt=document.getElementById("approval{{ data['Register Number']}}");
+                const rbt=document.getElementById("reject");
+                bt.style.display='none';
+                rbt.style.display='none';
+            } else {
+           
+                alert('Failed to reject.');
+            }
+        })
+        .catch(error => {
+     
+            console.error('Error:', error);
+        });
+    }
+</script>
+</html>

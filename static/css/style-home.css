@@ -1,0 +1,35 @@
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    padding-left: 200px;
+    text-shadow: 0px 0px 3px black;
+}
+.box
+{
+    border-radius: 10px;
+    background-color: #6CE298;
+    color: black;
+    margin: 120px 300px;
+    padding: 10px 60px;
+    height: 250px;
+    width: 750px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+button{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    cursor:pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 150px;
+    height: 30px;
+    border-radius: 20%;
+    background-color: wheat;
+    color: black;
+    font-weight: 700;
+    margin-left: 270px;
+    font-size: 20px;
+}
+button:hover{
+    background-color: rgb(198, 198, 198);
+}

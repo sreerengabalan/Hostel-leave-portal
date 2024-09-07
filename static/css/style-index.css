@@ -1,0 +1,42 @@
+body{
+    background-color: rgb(147, 147, 147);
+}
+.box{
+    border-radius: 25px;
+    background-color: #e6edb5;
+    color: black;
+    margin: 120px 300px;
+    padding: 10px 60px;
+    height: 450px;
+    width: 750px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 900;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+    padding-left: 280px;
+}
+input{
+    width: 200px;
+    height: 25px
+}
+button{
+    padding-left: 100px;
+}
+.bt{
+    border-radius: 20px;
+    margin-left: 280px;
+    height: 30px;
+    font-size: 20px;
+    color: wheat;
+    cursor: pointer;
+    background-color: black;
+}

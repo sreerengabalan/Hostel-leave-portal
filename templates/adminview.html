@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>admin</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style-admin.css') }}">
+</head>
+<body>
+    <!-- <div class="title"><h1>Data from MongoDB</h1></div> -->
+    <div class="title">
+        <h1>Incoming Leave Requests</h1>
+    </div>
+    <div class="table"><table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Register NO</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Reason</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for document in data %}
+                <tr>
+                    <td><a href="http://127.0.0.1:5000/student?ID={{ document['Register Number'] }}">{{ document.Name|safe }}</a></td>
+                    <td> <a href="http://127.0.0.1:5000/student?ID={{ document['Register Number'] }}">{{ document['Register Number'] }}</a></td>
+                    <td>{{ document.From }}</td>
+                    <td>{{ document.To }}</td>
+                    <td>{{ document.Reason }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table></div>
+</body>

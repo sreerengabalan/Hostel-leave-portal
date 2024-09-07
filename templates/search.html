@@ -1,0 +1,35 @@
+<!-- templates/display_data.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data from MongoDB</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style-search.css') }}">
+</head>
+<body>
+    <h1>Your Leave Status</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Register NO</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Reason</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+         
+                <tr>
+                    <td>{{ data.Name }}</td>
+                    <td>{{ data['Register Number'] }}</td>
+                    <td>{{ data.From }}</td>
+                    <td>{{ data.To }}</td>
+                    <td>{{ data.Reason }}</td>
+                    <td>{{ data.status }}</td>
+                </tr>
+        
+        </tbody>
+    </table>
+</body>
+</html>

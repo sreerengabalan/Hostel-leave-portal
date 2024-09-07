@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style-index.css') }}">
+</head>
+<body>
+    <div class="box">
+    <h1>Leave Form</h1>
+    <p>Please enter your information:</p>
+    <form  action="{{ url_for("leave") }}" method="post" > 
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter Name here...">
+        <br>
+        <br>
+        <label for="Reg">Reg No</label>
+        <input type="text" id="Reg" name="Reg" placeholder="Enter Reg No here...">
+        <br>
+        <br>
+        <label for="Room">Room No:</label>
+        <input type="text" id="Room" name="Room" placeholder="Enter Room No here...">
+        <br>
+        <br>
+        
+        <div class="input-container">
+            <label for="From">From</label>
+            <input type="date" id="From" name="From" placeholder="Enter From Date">
+            <label for="TO">To</label>
+            <input type="date" id="TO" name="TO" placeholder="Enter TO Date">
+        </div>
+        <br>
+        <label for="Reason">Reason</label>
+        <input type="text" id="Reason" name="Reason" placeholder="Enter Reason  here...">
+        <br>
+        <br>
+        <input class="bt" type="submit" value="Submit">
+        {{data}}
+    </form>
+    </div>
+</body>
+
+
+</html>
